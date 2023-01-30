@@ -53,6 +53,11 @@ namespace Calculation
         /// <param name="deltaTime">1フレームの経過時間</param>
         void Move(float deltaTime)override;
 
+        /// <summary>
+        /// 溜めたオイルを渡す処理
+        /// </summary>
+        void HandOver();
+
         //プレイヤーの大きさ
         const VECTOR PlayerScale = { 0.5f,0.5f, 0.5f };
         //プレイヤーの初期座標

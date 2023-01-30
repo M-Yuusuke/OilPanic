@@ -32,7 +32,7 @@ namespace Calculation
 
     private:
         //カメラの初期座標
-        const VECTOR FirstCameraPos = { 0,500.0f,-500.0f };
+        const VECTOR FirstCameraPos = { 0,300.0f,-700.0f };
         //カメラの注視点を設定
         const VECTOR Target = { 0,100.0f,100.0f };
 

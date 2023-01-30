@@ -5,6 +5,7 @@
 #include "../GameObject/AssetManager/AssetManager.h"
 #include "../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../GameObject/Collision/CollisionFunction/CollisionFunction.h"
+#include "../System/Rule/Rule.h"
 
 namespace Calculation
 {
@@ -55,6 +56,7 @@ namespace Calculation
         animControl->AddAnimationTime(deltaTime);
         Rotate();
         Move(deltaTime);
+        HandOver();
 
         //当たり判定モデルも位置更新
         CollisionUpdate();
@@ -129,21 +131,17 @@ namespace Calculation
         VECTOR inputVec = { 0,0,0 };
         //入力状態
         bool input = false;
-
-        if (!attack)
+        //左を入力していたら左に進む
+        if (CheckHitKey(KEY_INPUT_A) || gamePadState.ThumbLX < 0 || gamePadState.Buttons[2])
         {
-            //左を入力していたら左に進む
-            if (CheckHitKey(KEY_INPUT_A) || gamePadState.ThumbLX < 0 || gamePadState.Buttons[2])
-            {
-                inputVec += LEFT;
-                input = true;
-            }
-            //右を入力していたら右に進む
-            if (CheckHitKey(KEY_INPUT_D) || gamePadState.ThumbLX > 0 || gamePadState.Buttons[3])
-            {
-                inputVec += RIGHT;
-                input = true;
-            }
+            inputVec += LEFT;
+            input = true;
+        }
+        //右を入力していたら右に進む
+        if (CheckHitKey(KEY_INPUT_D) || gamePadState.ThumbLX > 0 || gamePadState.Buttons[3])
+        {
+            inputVec += RIGHT;
+            input = true;
         }
 
         //入力があったら加速
@@ -188,10 +186,28 @@ namespace Calculation
             }
         }
 
-        //移動処理
-        pos += velocity;
+        //左右の移動制限
+        if ((pos + velocity).x >= -100.0f && (pos + velocity).x <= 100.0f)
+        {
+            //移動処理
+            pos += velocity;
+        }
 
         //3Dモデルのポジション設定
         MV1SetPosition(modelHandle, pos);
+    }
+
+    /// <summary>
+    /// 溜めたオイルを渡す処理
+    /// </summary>
+    void Player::HandOver()
+    {
+        GetJoypadXInputState(DX_INPUT_PAD1, &gamePadState);
+        //ゲームパッドのBボタンもしくはスペースキーが押されたら
+        if (gamePadState.Buttons[13] || CheckHitKey(KEY_INPUT_SPACE))
+        {
+            //溜めたオイルをプレイヤーの前に出現＆落下
+            
+        }
     }
 }

@@ -68,8 +68,6 @@ namespace Calculation
             //“–‚½‚è”»’è‹…“¯Žm‚ª“–‚½‚Á‚Ä‚¢‚½‚ç
             if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
             {
-                //•s‰ÂŽ‹‰»
-                visible = false;
             }
         }
     }

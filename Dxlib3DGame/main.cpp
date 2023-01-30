@@ -39,8 +39,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//ゲームループ
 	while (!ProcessMessage() && !CheckHitKey(KEY_INPUT_ESCAPE))
 	{
+		LONGLONG time = GetNowHiPerformanceCount();
 		scene = scene->Update();
 		scene->Draw();
+		//フレームレート固定
+		while (GetNowHiPerformanceCount() - time > 16667) {}
 	}
 	Calculation::GameObjectManager::DestroyInstance();
 	Calculation::AssetManager::DestroyInstance();

@@ -79,12 +79,15 @@ namespace Calculation
         //衝突オブジェクトのタグを取得
         ObjectTag tag = other->GetTag();
         //プレイヤーと衝突した場合
-        if (tag == ObjectTag::Bucket)
+        if (tag == ObjectTag::Player)
         {
             //球体とプレイヤーの球体との当たり判定
             if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
             {
-
+                //不可視化
+                visible = false;
+                //初期化
+                Initialize();
             }
         }
     }
@@ -131,6 +134,7 @@ namespace Calculation
         //posのY座標が下限値を下回ったら初期化
         if(pos.y <= LowerLimitPosY)
         {
+            //不可視化
             visible = false;
             //初期化
             Initialize();
