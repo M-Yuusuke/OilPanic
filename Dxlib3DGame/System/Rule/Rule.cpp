@@ -1,19 +1,20 @@
 #include "Rule.h"
 
-Rule* Rule::Instance = nullptr;
+Rule* Rule::instance = nullptr;
 
 Rule::Rule() :
-    NowTime(0),
-    DeltaTime(0),
-    PrevTime(0)
+    nowTime(0),
+    deltaTime(0),
+    prevTime(0),
+    score(0)
 {
 }
 
 Rule::~Rule()
 {
-    NowTime = NULL;
-    DeltaTime = NULL;
-    PrevTime = NULL;
+    nowTime = NULL;
+    deltaTime = NULL;
+    prevTime = NULL;
 }
 
 /**
@@ -22,11 +23,11 @@ Rule::~Rule()
 */
 Rule* Rule::CreateInstance()
 {
-    if (!Instance)
+    if (!instance)
     {
-        Instance = new Rule;
+        instance = new Rule;
     }
-    return Instance;
+    return instance;
 }
 
 /**
@@ -36,16 +37,20 @@ Rule* Rule::CreateInstance()
 */
 void Rule::DestoryInstance()
 {
-    if (Instance)
+    if (instance)
     {
-        delete Instance;
-        Instance = nullptr;
+        delete instance;
+        instance = nullptr;
     }
 }
 
 void Rule::Initialize()
 {
-    NowTime = 0;
-    DeltaTime = 0;
-    PrevTime = 0;
+    nowTime = 0;
+    deltaTime = 0;
+    prevTime = 0;
+
+    SetNowTime();
+    SetDeltaTime();
+    SetPrevTime();
 }

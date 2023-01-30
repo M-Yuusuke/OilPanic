@@ -21,10 +21,9 @@ PlayerUI::~PlayerUI()
 /// <summary>
 /// 更新処理
 /// </summary>
-void PlayerUI::Update()
+void PlayerUI::Update(int score)
 {
-    //Calculation::Player* player = static_cast<Calculation::Player*>(Calculation::GameObjectManager::GetFirstGameObject(Calculation::ObjectTag::Player));
-    //hp = player->GetHP();
+    this->score = score;
 }
 
 /// <summary>
@@ -32,10 +31,8 @@ void PlayerUI::Update()
 /// </summary>
 void PlayerUI::Draw()
 {
-    //SetFontSize(FontSize);
-    //DrawString(HpStringPosX, HpMeterPosY, "HP", GetColor(White.x, White.y, White.z));
-    ////HPゲージフレーム
-    //DrawBox(MeterPosX - FrameSub, HpMeterPosY - FrameSub, MeterPosX + MeterWidth + FrameSub, HpMeterPosY + MeterHeight + FrameSub, GetColor(0, 0, 0), TRUE);
-    ////HPゲージ
-    //DrawBox(MeterPosX, HpMeterPosY, MeterPosX + (hp * Magnifincation), HpMeterPosY + MeterHeight, GetColor(HpColor.x, HpColor.y, HpColor.z), TRUE);
+    //フォントサイズを指定
+    SetFontSize(FontSize);
+    //スコア表示
+    DrawFormatString(50, 20, GetColor(255, 255, 255), "SCORE %d", score);
 }

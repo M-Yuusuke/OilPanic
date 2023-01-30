@@ -58,12 +58,14 @@ namespace Calculation
         /// </summary>
         void HandOver();
 
-        //プレイヤーの大きさ
+        //大きさ
         const VECTOR PlayerScale = { 0.5f,0.5f, 0.5f };
-        //プレイヤーの初期座標
+        //初期座標
         const VECTOR FirstPos = { 0,100,0 };
-        //プレイヤーの初期向き
+        //初期向き
         const VECTOR FirstDir = { 1,0,0 };
+        //移動制限
+        const float MoveLimit = 200.0f;
 
         //球の初期ローカル座標
         const VECTOR FirstLocalPos = { 0, 50.0f, 0 };

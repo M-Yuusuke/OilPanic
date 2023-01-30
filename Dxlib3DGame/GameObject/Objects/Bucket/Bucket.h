@@ -52,9 +52,9 @@ namespace Calculation
         //当たり判定球の中心点の座標
         const VECTOR FirstLocalPos = { 0,70.0f,0 };
         //プレイヤーが左向きの時のプレイヤーとの相対位置
-        const VECTOR LeftRelativePos = { -100.0f,0,0 };
+        const VECTOR LeftRelativePos = { -50.0f,0,0 };
         //プレイヤーが右向きの時のプレイヤーとの相対位置
-        const VECTOR RightRelativePos = { 100.0f, 0, 0 };
+        const VECTOR RightRelativePos = { 50.0f, 0, 0 };
         //当たり判定球の半径
         const float Radius = 30.0f;
         //プレイヤーのポインタ

@@ -1,2 +1,9 @@
 ﻿  Player.cpp
-  Dxlib3DGame.vcxproj -> C:\Users\student\Desktop\muchima\Dxlib3DGame\x64\Debug\Dxlib3DGame.exe
+  Initialize.cpp
+  Play.cpp
+  SceneBase.cpp
+  Rule.cpp
+  PlayerUI.cpp
+  main.cpp
+  コードを生成中...
+  Dxlib3DGame.vcxproj -> C:\Users\bianm\Desktop\Dxlib3DGame\x64\Debug\Dxlib3DGame.exe

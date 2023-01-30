@@ -62,14 +62,6 @@ namespace Calculation
     void Bucket::OnCollisionEnter(GameObjectBase* other)
     {
         ObjectTag tag = other->GetTag();
-        //ƒIƒCƒ‹‚Æ‚Ì“–‚½‚è”»’è
-        if (tag == ObjectTag::Oil)
-        {
-            //“–‚½‚è”»’è‹…“¯Žm‚ª“–‚½‚Á‚Ä‚¢‚½‚ç
-            if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
-            {
-            }
-        }
     }
 
     /// <summary>

@@ -189,7 +189,7 @@ namespace Calculation
         for (int oilNum = 0; oilNum < Instance->Objects[ObjectTag::Oil].size(); oilNum++)
         {
             //オイル対プレイヤー
-            Instance->Objects[ObjectTag::Oil][oilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Player][0]);
+            Instance->Objects[ObjectTag::Oil][oilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Bucket][0]);
         }
         
 

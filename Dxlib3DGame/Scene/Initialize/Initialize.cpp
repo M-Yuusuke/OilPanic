@@ -43,17 +43,15 @@ SceneBase* Initialize::Update()
 {
     Calculation::GameObjectManager::Entry(new Calculation::Player);
     Calculation::GameObjectManager::Entry(new Calculation::Stage);
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        Calculation::GameObjectManager::Entry(new Calculation::Oil(VGet((float)100 * i, 300.0f, 0)));
+        Calculation::GameObjectManager::Entry(new Calculation::Oil(VGet((float)-100 + 100 * i, 300.0f, 0)));
     }
     Calculation::GameObjectManager::Entry(new Calculation::Camera);
     Calculation::GameObjectManager::Entry(new Calculation::Bucket);
 
     Calculation::GameObjectManager::Init();
-    rule->SetNowTime();
-    rule->SetDeltaTime();
-    rule->SetPrevTime();
+    rule->Initialize();
     return SceneManager::NextScene(this);
 }
 

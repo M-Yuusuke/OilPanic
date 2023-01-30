@@ -44,7 +44,7 @@ namespace Calculation
         //設定されたポジションにセット
         pos = FirstPos;
         //1～5秒のクールタイムをセット
-        MaxCoolTime = (float)(1 + GetRand(9));
+        MaxCoolTime = (float)(1 + GetRand(14));
         //クールタイムを設定
         CoolTime = MaxCoolTime;
         visible = false;
@@ -56,6 +56,7 @@ namespace Calculation
     /// <param name="deltaTime">1フレームの経過時間</param>
     void Oil::Update(float deltaTime)
     {
+        //落下処理
         Drop(deltaTime);
         //当たり判定の更新処理
         CollisionUpdate();
@@ -79,7 +80,7 @@ namespace Calculation
         //衝突オブジェクトのタグを取得
         ObjectTag tag = other->GetTag();
         //プレイヤーと衝突した場合
-        if (tag == ObjectTag::Player)
+        if (tag == ObjectTag::Bucket)
         {
             //球体とプレイヤーの球体との当たり判定
             if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))

@@ -187,7 +187,7 @@ namespace Calculation
         }
 
         //¶‰E‚ÌˆÚ“®§ŒÀ
-        if ((pos + velocity).x >= -100.0f && (pos + velocity).x <= 100.0f)
+        if ((pos + velocity).x >= -MoveLimit && (pos + velocity).x <= MoveLimit)
         {
             //ˆÚ“®ˆ—
             pos += velocity;

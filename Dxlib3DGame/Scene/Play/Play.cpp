@@ -44,7 +44,7 @@ SceneBase* Play::Update()
     }
     Calculation::GameObjectManager::Update(rule->GetDeltaTime());
     Calculation::GameObjectManager::Collision();
-    playerUI->Update();
+    playerUI->Update(rule->GetScore());
     rule->SetPrevTime();
     return this;
 }

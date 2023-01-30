@@ -20,7 +20,7 @@ public:
     /// <summary>
     /// XVˆ—
     /// </summary>
-    void Update();
+    void Update(int score);
 
     /// <summary>
     /// •`‰æˆ—
@@ -52,5 +52,5 @@ private:
     const INT4 White = { 255,255,255 };
 
     int hp;
-    //Calculation::Player* player;
+    int score;
 };
