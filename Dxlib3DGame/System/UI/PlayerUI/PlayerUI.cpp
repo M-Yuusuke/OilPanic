@@ -1,14 +1,16 @@
 #include "PlayerUI.h"
 #include "../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../GameObject/ObjectTag.h"
-#include "../GameObject/Objects/Player/Player.h"
+#include "../System/Rule/Rule.h"
 
 /// <summary>
 /// コンストラクタ
 /// </summary>
 PlayerUI::PlayerUI():
-    hp(0)
+    score(0),
+    rule(nullptr)
 {
+    rule = Rule::CreateInstance();
 }
 
 /// <summary>
@@ -21,9 +23,9 @@ PlayerUI::~PlayerUI()
 /// <summary>
 /// 更新処理
 /// </summary>
-void PlayerUI::Update(int score)
+void PlayerUI::Update()
 {
-    this->score = score;
+    this->score = rule->GetScore();
 }
 
 /// <summary>

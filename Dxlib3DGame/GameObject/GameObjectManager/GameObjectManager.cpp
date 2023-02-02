@@ -188,8 +188,8 @@ namespace Calculation
         //プレイヤーとオイルとの当たり判定
         for (int oilNum = 0; oilNum < Instance->Objects[ObjectTag::Oil].size(); oilNum++)
         {
-            //オイル対プレイヤー
-            Instance->Objects[ObjectTag::Oil][oilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Bucket][0]);
+            //バケツ対オイル
+            Instance->Objects[ObjectTag::Bucket][0]->OnCollisionEnter(Instance->Objects[ObjectTag::Oil][oilNum]);
         }
         
 

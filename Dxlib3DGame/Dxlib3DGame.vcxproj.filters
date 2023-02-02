@@ -109,6 +109,9 @@
     <Filter Include="GameObject\Objects\Characters\Bucket">
       <UniqueIdentifier>{9e411cec-9acc-4f2e-a57a-0212e464b005}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\UI\BacketUI">
+      <UniqueIdentifier>{28d40fc8-bca3-4a1a-b3c8-aef1f8e61caa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -188,6 +191,12 @@
     </ClCompile>
     <ClCompile Include="GameObject\Objects\Bucket\Bucket.cpp">
       <Filter>GameObject\Objects\Characters\Bucket</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="System\UI\BucketUI\BucketUI.cpp">
+      <Filter>System\UI\BacketUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +280,12 @@
     </ClInclude>
     <ClInclude Include="GameObject\Objects\Bucket\Bucket.h">
       <Filter>GameObject\Objects\Characters\Bucket</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="System\UI\BucketUI\BucketUI.h">
+      <Filter>System\UI\BacketUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

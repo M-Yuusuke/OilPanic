@@ -38,6 +38,12 @@ namespace Calculation
         /// <param name="Obj">オブジェクトのポインタ</param>
         void OnCollisionEnter(GameObjectBase* other)override;
 
+        /// <summary>
+        /// オイルの獲得数を返す
+        /// </summary>
+        /// <returns>現在のオイルの獲得数</returns>
+        int GetAcquisition()const { return acquisition; }
+
     private:
         /// <summary>
         /// モデルロード
@@ -50,16 +56,22 @@ namespace Calculation
         void Move();
 
         //当たり判定球の中心点の座標
-        const VECTOR FirstLocalPos = { 0,70.0f,0 };
+        const VECTOR FirstLocalPos = { 0,10.0f,0 };
         //プレイヤーが左向きの時のプレイヤーとの相対位置
-        const VECTOR LeftRelativePos = { -50.0f,0,0 };
+        const VECTOR LeftRelativePos = { -50.0f,100.0f,0 };
         //プレイヤーが右向きの時のプレイヤーとの相対位置
-        const VECTOR RightRelativePos = { 50.0f, 0, 0 };
+        const VECTOR RightRelativePos = { 50.0f, 100.0f, 0 };
+        //モデルの大きさ
+        const VECTOR Scale = { 1.0f,1.0f ,1.0f };
         //当たり判定球の半径
         const float Radius = 30.0f;
+        //獲得上限
+        const int AcquisitionLimit = 3;
+
         //プレイヤーのポインタ
         CharacterBase* player;
-        
+        //現在の獲得数
+        int acquisition;
     };
 }
 

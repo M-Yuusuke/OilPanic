@@ -175,6 +175,7 @@
     <ClCompile Include="GameObject\Objects\Player\Player.cpp" />
     <ClCompile Include="GameObject\Objects\Stage\Stage.cpp" />
     <ClCompile Include="GameObject\VectorCalculation\VectorCalculation.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene\Initialize\Initialize.cpp" />
     <ClCompile Include="Scene\Play\Play.cpp" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Scene\SceneManager\SceneManager.cpp" />
     <ClCompile Include="Scene\Title\Title.cpp" />
     <ClCompile Include="System\Rule\Rule.cpp" />
+    <ClCompile Include="System\UI\BucketUI\BucketUI.cpp" />
     <ClCompile Include="System\UI\PlayerUI\PlayerUI.cpp" />
     <ClCompile Include="System\UI\UIBase\UIBase.cpp" />
   </ItemGroup>
@@ -205,6 +207,7 @@
     <ClInclude Include="GameObject\Objects\Stage\Stage.h" />
     <ClInclude Include="GameObject\ObjectTag.h" />
     <ClInclude Include="GameObject\VectorCalculation\VectorCalculation.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="Scene\Initialize\Initialize.h" />
     <ClInclude Include="Scene\Play\Play.h" />
     <ClInclude Include="Scene\Result\Result.h" />
@@ -212,6 +215,7 @@
     <ClInclude Include="Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="Scene\Title\Title.h" />
     <ClInclude Include="System\Rule\Rule.h" />
+    <ClInclude Include="System\UI\BucketUI\BucketUI.h" />
     <ClInclude Include="System\UI\PlayerUI\PlayerUI.h" />
     <ClInclude Include="System\UI\UIBase\UIBase.h" />
   </ItemGroup>

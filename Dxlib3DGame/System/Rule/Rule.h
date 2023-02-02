@@ -23,6 +23,7 @@ public:
     /// </summary>
     void Initialize();
 
+
     //時間関係処理
     
     /// <summary>
@@ -52,6 +53,11 @@ public:
     /// <returns>スコア</returns>
     int GetScore()const { return instance->score; }
 
+    /// <summary>
+    /// スコア加算
+    /// </summary>
+    static void AcquisitionScore() { instance->score += instance->AddScore; }
+
 
 private:
     /// <summary>
@@ -66,6 +72,9 @@ private:
 
     //ルールクラスのインスタンス
     static Rule* instance;
+
+    //増加させるスコア
+    const int AddScore = 5;
 
     //フレーム開始時間
     int nowTime;

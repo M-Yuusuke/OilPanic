@@ -9,8 +9,9 @@
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	// ＤＸライブラリ初期化処理
+	//使用するDirectXのバージョンを指定
 	SetUseDirect3DVersion(DX_DIRECT3D_11);
+	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1)
 	{
 		// エラーが起きたら直ちに終了

@@ -3,6 +3,7 @@
 #include "../GameObject/AssetManager/AssetManager.h"
 #include "../GameObject/ObjectTag.h"
 #include "../GameObject/VectorCalculation/VectorCalculation.h"
+#include "../System/Rule/Rule.h"
 
 namespace Calculation
 {
@@ -41,13 +42,14 @@ namespace Calculation
     /// </summary>
     void Oil::Initialize()
     {
+        //モデルを非表示
+        visible = false;
         //設定されたポジションにセット
         pos = FirstPos;
         //1～5秒のクールタイムをセット
         MaxCoolTime = (float)(1 + GetRand(14));
         //クールタイムを設定
         CoolTime = MaxCoolTime;
-        visible = false;
     }
 
     /// <summary>
@@ -82,14 +84,6 @@ namespace Calculation
         //プレイヤーと衝突した場合
         if (tag == ObjectTag::Bucket)
         {
-            //球体とプレイヤーの球体との当たり判定
-            if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
-            {
-                //不可視化
-                visible = false;
-                //初期化
-                Initialize();
-            }
         }
     }
 

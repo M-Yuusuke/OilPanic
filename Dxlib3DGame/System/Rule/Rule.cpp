@@ -17,10 +17,10 @@ Rule::~Rule()
     prevTime = NULL;
 }
 
-/**
-* Ruleのインスタンスを生成する
-* @note staticメソッドを内部で使用する際に必要
-*/
+/// <summary>
+/// インスタンス生成
+/// </summary>
+/// <returns>ルールクラスのインスタンス</returns>
 Rule* Rule::CreateInstance()
 {
     if (!instance)
@@ -30,11 +30,9 @@ Rule* Rule::CreateInstance()
     return instance;
 }
 
-/**
-* Ruleの後始末処理
-* @detail アプリケーション終了前に呼び出し、ルールクラスが確保した領域と
-* ルールクラス自身の解放処理を行う。
-*/
+/// <summary>
+/// インスタンス破棄
+/// </summary>
 void Rule::DestoryInstance()
 {
     if (instance)
@@ -44,6 +42,9 @@ void Rule::DestoryInstance()
     }
 }
 
+/// <summary>
+/// 初期化処理
+/// </summary>
 void Rule::Initialize()
 {
     nowTime = 0;

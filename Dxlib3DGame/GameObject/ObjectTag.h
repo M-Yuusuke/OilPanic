@@ -8,6 +8,7 @@ namespace Calculation
     enum class ObjectTag : unsigned char
     {
         Player,
+        Helper,
         Oil,
         Bucket,
         Stage,
@@ -24,6 +25,7 @@ namespace Calculation
     constexpr static ObjectTag ObjectTagAll[] =
     {
         ObjectTag::Player,
+        ObjectTag::Helper,
         ObjectTag::Oil,
         ObjectTag::Bucket,
         ObjectTag::Stage,

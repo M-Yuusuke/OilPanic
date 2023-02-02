@@ -1,6 +1,6 @@
 #pragma once
 #include "../UIBase/UIBase.h"
-#include "../GameObject/Objects/Player/Player.h"
+class Rule;
 /// <summary>
 /// プレイヤーのHPバー関連処理
 /// </summary>
@@ -20,7 +20,7 @@ public:
     /// <summary>
     /// 更新処理
     /// </summary>
-    void Update(int score);
+    void Update();
 
     /// <summary>
     /// 描画処理
@@ -28,29 +28,10 @@ public:
     void Draw();
 
 private:
-    //PlayerUIのフォントサイズ
+    //フォントサイズ
     const int FontSize = 48;
+    //ルールクラスのインスタンス
+    Rule* rule;
 
-    //HPゲージの色
-    const INT4 HpColor = { 0,0,255 };
-
-    //ゲージの拡大率
-    const int Magnifincation = 5;
-    //ゲージの左端の位置
-    const int MeterPosX = 200;
-    //ゲージの縦幅
-    const int MeterHeight = 50;
-    //ゲージの幅の最大値
-    const int MeterWidth = 500;
-    //ゲージとフレームの差
-    const int FrameSub = 5;
-    //HPゲージのY座標
-    const int HpMeterPosY = 50;
-    //HPの文字のx座標
-    const int HpStringPosX = MeterPosX - 80;
-    //白色
-    const INT4 White = { 255,255,255 };
-
-    int hp;
     int score;
 };
