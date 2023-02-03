@@ -55,6 +55,11 @@ namespace Calculation
         /// </summary>
         void Move();
 
+        /// <summary>
+        /// 溜めたオイルを渡す処理
+        /// </summary>
+        void HandOver();
+
         //当たり判定球の中心点の座標
         const VECTOR FirstLocalPos = { 0,10.0f,0 };
         //プレイヤーが左向きの時のプレイヤーとの相対位置
@@ -72,6 +77,8 @@ namespace Calculation
         CharacterBase* player;
         //現在の獲得数
         int acquisition;
+        //ゲームパッド入力状態
+        XINPUT_STATE gamePadState;
     };
 }
 

@@ -4,14 +4,14 @@
 #include "../../GameObject/VectorCalculation/VectorCalculation.h"
 #include "../../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../../System/Rule/Rule.h"
-#include "../System/UI/PlayerUI/PlayerUI.h"
+#include "../System/UI/ScoreUI/ScoreUI.h"
 #include "../System/UI/BucketUI/BucketUI.h"
 #include "../GameObject/Objects/Player/Player.h"
 
 Play* Play::Instance = nullptr;
 
 Play::Play():
-    playerUI(new PlayerUI),
+    scoreUI(new ScoreUI),
     bucketUI(new BucketUI)
 {
 }
@@ -46,7 +46,7 @@ SceneBase* Play::Update()
     }
     Calculation::GameObjectManager::Update(rule->GetDeltaTime());
     Calculation::GameObjectManager::Collision();
-    playerUI->Update();
+    scoreUI->Update();
     bucketUI->Update();
     rule->SetPrevTime();
     return this;
@@ -56,9 +56,9 @@ void Play::Draw()
 {
     ClearDrawScreen();
     Calculation::GameObjectManager::Draw();
-    //
-    playerUI->Draw();
-    //
+    //スコアを描画
+    scoreUI->Draw();
+    //バケツメータを描画
     bucketUI->Draw();
     ScreenFlip();
 }

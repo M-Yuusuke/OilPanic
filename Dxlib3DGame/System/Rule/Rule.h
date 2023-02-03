@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "../GameObject/Objects/Bucket/Bucket.h"
 
 /// <summary>
 /// ゲームルール関連の処理を行うクラス
@@ -22,6 +23,8 @@ public:
     /// 初期化処理
     /// </summary>
     void Initialize();
+
+    void Update();
 
 
     //時間関係処理
@@ -54,10 +57,26 @@ public:
     int GetScore()const { return instance->score; }
 
     /// <summary>
-    /// スコア加算
+    /// スコア加算（ボーナス無し）
     /// </summary>
-    static void AcquisitionScore() { instance->score += instance->AddScore; }
+    static void AcquisitionScore() { instance->score++; }
 
+    /// <summary>
+    /// スコア加算（ボーナス有り）
+    /// </summary>
+    /// <param name="bonus">バケツに汲み取った回数</param>
+    static void AcquisitionScore(int bonus) { instance->score += instance->Bonus[bonus]; }
+
+    /// <summary>
+    /// ミスカウント加算
+    /// </summary>
+    void AddMissCount() { instance->missCount++; }
+
+    /// <summary>
+    /// ミスカウントを返す
+    /// </summary>
+    /// <returns>ミスカウント</returns>
+    int GetMissCount()const { return instance->missCount; }
 
 private:
     /// <summary>
@@ -73,8 +92,8 @@ private:
     //ルールクラスのインスタンス
     static Rule* instance;
 
-    //増加させるスコア
-    const int AddScore = 5;
+    //ボーナス
+    const int Bonus[3] = { 1,2,5 };
 
     //フレーム開始時間
     int nowTime;
@@ -85,5 +104,9 @@ private:
 
     //スコア記録用変数
     int score;
+    //ミスカウント
+    int missCount;
+    //バケツのポインタ
+    Calculation::Bucket* bucket;
 };
 

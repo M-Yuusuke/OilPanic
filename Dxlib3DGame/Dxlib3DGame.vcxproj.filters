@@ -97,9 +97,6 @@
     <Filter Include="System\UI">
       <UniqueIdentifier>{b6185b97-e893-4682-98f4-ff4e373c00c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System\UI\PlayerUI">
-      <UniqueIdentifier>{32490fd0-e02a-4d57-a95b-69199bca8ddd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="System\UI\UIBase">
       <UniqueIdentifier>{49573c1c-b805-4cb2-852c-e4b56d989adc}</UniqueIdentifier>
     </Filter>
@@ -111,6 +108,15 @@
     </Filter>
     <Filter Include="System\UI\BacketUI">
       <UniqueIdentifier>{28d40fc8-bca3-4a1a-b3c8-aef1f8e61caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\UI\ScoreUI">
+      <UniqueIdentifier>{32490fd0-e02a-4d57-a95b-69199bca8ddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Objects\PlayerOil">
+      <UniqueIdentifier>{2cd1281b-ca9d-4ce4-9c0a-4a8277db550c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Objects\Characters\Helper">
+      <UniqueIdentifier>{d00e1d12-d3d5-4e43-a64f-f00beef7ddb9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -183,20 +189,23 @@
     <ClCompile Include="System\UI\UIBase\UIBase.cpp">
       <Filter>System\UI\UIBase</Filter>
     </ClCompile>
-    <ClCompile Include="System\UI\PlayerUI\PlayerUI.cpp">
-      <Filter>System\UI\PlayerUI</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Objects\Oil\Oil.cpp">
       <Filter>GameObject\Objects\Oil</Filter>
     </ClCompile>
     <ClCompile Include="GameObject\Objects\Bucket\Bucket.cpp">
       <Filter>GameObject\Objects\Characters\Bucket</Filter>
     </ClCompile>
-    <ClCompile Include="Helper.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="System\UI\BucketUI\BucketUI.cpp">
       <Filter>System\UI\BacketUI</Filter>
+    </ClCompile>
+    <ClCompile Include="System\UI\ScoreUI\ScoreUI.cpp">
+      <Filter>System\UI\ScoreUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Objects\PlayerOil\PlayerOil.cpp">
+      <Filter>GameObject\Objects\PlayerOil</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Objects\Helper\Helper.cpp">
+      <Filter>GameObject\Objects\Characters\Helper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,20 +281,23 @@
     <ClInclude Include="System\UI\UIBase\UIBase.h">
       <Filter>System\UI\UIBase</Filter>
     </ClInclude>
-    <ClInclude Include="System\UI\PlayerUI\PlayerUI.h">
-      <Filter>System\UI\PlayerUI</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject\Objects\Oil\Oil.h">
       <Filter>GameObject\Objects\Oil</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Objects\Bucket\Bucket.h">
       <Filter>GameObject\Objects\Characters\Bucket</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="System\UI\BucketUI\BucketUI.h">
       <Filter>System\UI\BacketUI</Filter>
+    </ClInclude>
+    <ClInclude Include="System\UI\ScoreUI\ScoreUI.h">
+      <Filter>System\UI\ScoreUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Objects\PlayerOil\PlayerOil.h">
+      <Filter>GameObject\Objects\PlayerOil</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Objects\Helper\Helper.h">
+      <Filter>GameObject\Objects\Characters\Helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

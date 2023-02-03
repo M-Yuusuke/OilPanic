@@ -122,14 +122,14 @@ namespace Calculation
         if (CoolTime <= 0)
         {
             visible = true;
-            pos -= DropVelocity * deltaTime * DropSpeed;
+            pos.y += deltaTime * DropSpeed;
             MV1SetPosition(modelHandle, pos);
         }
 
         //posのY座標が下限値を下回ったら初期化
         if(pos.y <= LowerLimitPosY)
         {
-            //不可視化
+            //非表示
             visible = false;
             //初期化
             Initialize();

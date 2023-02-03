@@ -9,6 +9,7 @@ namespace Calculation
     {
         Player,
         Helper,
+        PlayerOil,
         Oil,
         Bucket,
         Stage,
@@ -26,6 +27,7 @@ namespace Calculation
     {
         ObjectTag::Player,
         ObjectTag::Helper,
+        ObjectTag::PlayerOil,
         ObjectTag::Oil,
         ObjectTag::Bucket,
         ObjectTag::Stage,

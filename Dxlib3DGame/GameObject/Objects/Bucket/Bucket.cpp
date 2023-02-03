@@ -6,6 +6,7 @@
 #include "../GameObject/Objects/CharacterBase/CharacterBase.h"
 #include "../System/Rule/Rule.h"
 #include "../Oil/Oil.h"
+#include "../PlayerOil/PlayerOil.h"
 
 namespace Calculation
 {
@@ -45,6 +46,10 @@ namespace Calculation
     {
         //移動処理
         Move();
+        if (acquisition > 0)
+        {
+            HandOver();
+        }
         //当たり判定の更新処理
         CollisionUpdate();
     }
@@ -77,7 +82,7 @@ namespace Calculation
                     acquisition++;
                     //獲得できたら初期化
                     static_cast<Oil*>(other)->Initialize();
-                    //スコア加算
+                    //スコア加算（ボーナス無し）
                     Rule::AcquisitionScore();
                 }
             }
@@ -127,5 +132,22 @@ namespace Calculation
         }
         //モデルの配置
         MV1SetPosition(modelHandle, pos);
+    }
+
+    /// <summary>
+    /// 溜めたオイルを渡す処理
+    /// </summary>
+    void Bucket::HandOver()
+    {
+        //ゲームパッドの入力状態を取得
+        GetJoypadXInputState(DX_INPUT_PAD1, &gamePadState);
+        //ゲームパッドのBボタンもしくはスペースキーが押されたら
+        if (gamePadState.Buttons[13] || CheckHitKey(KEY_INPUT_SPACE))
+        {
+            //オイルを生成
+            GameObjectManager::Entry(new PlayerOil(pos, acquisition));
+            //溜まった量を初期化
+            acquisition = 0;
+        }
     }
 }

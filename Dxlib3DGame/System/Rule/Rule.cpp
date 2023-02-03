@@ -1,4 +1,5 @@
 #include "Rule.h"
+#include "../GameObject/GameObjectManager/GameObjectManager.h"
 
 Rule* Rule::instance = nullptr;
 
@@ -6,7 +7,8 @@ Rule::Rule() :
     nowTime(0),
     deltaTime(0),
     prevTime(0),
-    score(0)
+    score(0),
+    bucket(nullptr)
 {
 }
 
@@ -54,4 +56,8 @@ void Rule::Initialize()
     SetNowTime();
     SetDeltaTime();
     SetPrevTime();
+}
+
+void Rule::Update()
+{
 }

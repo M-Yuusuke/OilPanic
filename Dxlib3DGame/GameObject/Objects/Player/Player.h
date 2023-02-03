@@ -1,6 +1,6 @@
 #pragma once
 #include "../GameObject/Objects/CharacterBase/CharacterBase.h"
-#include "../System/UI/PlayerUI/PlayerUI.h"
+#include "../System/UI/ScoreUI/ScoreUI.h"
 namespace Calculation
 {
     /// <summary>
@@ -52,11 +52,6 @@ namespace Calculation
         /// </summary>
         /// <param name="deltaTime">1フレームの経過時間</param>
         void Move(float deltaTime)override;
-
-        /// <summary>
-        /// 溜めたオイルを渡す処理
-        /// </summary>
-        void HandOver();
 
         //大きさ
         const VECTOR PlayerScale = { 0.5f,0.5f, 0.5f };

@@ -28,14 +28,6 @@ void BucketUI::Update()
         bucket = static_cast<Calculation::Bucket*>(Calculation::GameObjectManager::GetFirstGameObject(Calculation::ObjectTag::Bucket));
     }
     acquisition = bucket->GetAcquisition();
-    //if (CheckHitKey(KEY_INPUT_UP))
-    //{
-    //    acquisition++;
-    //}
-    //if (CheckHitKey(KEY_INPUT_DOWN))
-    //{
-    //    acquisition--;
-    //}
 
     switch (acquisition)
     {

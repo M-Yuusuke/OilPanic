@@ -56,7 +56,6 @@ namespace Calculation
         animControl->AddAnimationTime(deltaTime);
         Rotate();
         Move(deltaTime);
-        HandOver();
 
         //当たり判定モデルも位置更新
         CollisionUpdate();
@@ -195,19 +194,5 @@ namespace Calculation
 
         //3Dモデルのポジション設定
         MV1SetPosition(modelHandle, pos);
-    }
-
-    /// <summary>
-    /// 溜めたオイルを渡す処理
-    /// </summary>
-    void Player::HandOver()
-    {
-        GetJoypadXInputState(DX_INPUT_PAD1, &gamePadState);
-        //ゲームパッドのBボタンもしくはスペースキーが押されたら
-        if (gamePadState.Buttons[13] || CheckHitKey(KEY_INPUT_SPACE))
-        {
-            //溜めたオイルをプレイヤーの前に出現＆落下
-            
-        }
     }
 }
