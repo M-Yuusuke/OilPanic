@@ -39,13 +39,13 @@ private:
     //メータの拡大率
     const int Magnifincation = 100;
     //メータの左上のX座標
-    const int MeterPosX = 600;
+    const int MeterPosX = 50;
     //メータの左上のY座標
-    const int MeterPosY = 50;
+    const int MeterPosY = 300;
     //メータの縦幅
-    const int MeterHeight = 50;
+    const int MeterHeight = 300;
     //メータの幅の最大値
-    const int MeterWidth = 500;
+    const int MeterWidth = 50;
     //メータとフレームの差
     const int FrameSub = 5;
     //文字のx座標

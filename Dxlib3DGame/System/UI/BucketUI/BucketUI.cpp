@@ -23,15 +23,19 @@ BucketUI::~BucketUI()
 /// </summary>
 void BucketUI::Update()
 {
-    //acquisition = bucket->GetAcquisition();
-    if (CheckHitKey(KEY_INPUT_UP))
+    if (!bucket)
     {
-        acquisition++;
+        bucket = static_cast<Calculation::Bucket*>(Calculation::GameObjectManager::GetFirstGameObject(Calculation::ObjectTag::Bucket));
     }
-    if (CheckHitKey(KEY_INPUT_DOWN))
-    {
-        acquisition--;
-    }
+    acquisition = bucket->GetAcquisition();
+    //if (CheckHitKey(KEY_INPUT_UP))
+    //{
+    //    acquisition++;
+    //}
+    //if (CheckHitKey(KEY_INPUT_DOWN))
+    //{
+    //    acquisition--;
+    //}
 
     switch (acquisition)
     {
@@ -64,5 +68,5 @@ void BucketUI::Draw()
     //メータの枠
     DrawBox(MeterPosX - FrameSub, MeterPosY - FrameSub, MeterPosX + MeterWidth + FrameSub, MeterPosY + MeterHeight + FrameSub, GetColor(Black.x, Black.y, Black.z), TRUE);
     //メータ
-    DrawBox(MeterPosX, MeterPosY, MeterPosX + (acquisition * Magnifincation), MeterPosY + MeterHeight, GetColor(ColorNum.x, ColorNum.y, ColorNum.z), TRUE);
+    DrawBox(MeterPosX, MeterPosY + MeterHeight, MeterPosX + MeterWidth, (MeterPosY + MeterHeight) - (acquisition * Magnifincation), GetColor(ColorNum.x, ColorNum.y, ColorNum.z), TRUE);
 }

@@ -47,7 +47,7 @@ namespace Calculation
         //設定されたポジションにセット
         pos = FirstPos;
         //1～5秒のクールタイムをセット
-        MaxCoolTime = (float)(1 + GetRand(14));
+        MaxCoolTime = (float)(1 + GetRand(9));
         //クールタイムを設定
         CoolTime = MaxCoolTime;
     }
