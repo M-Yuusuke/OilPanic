@@ -4,6 +4,7 @@
 #include "../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../GameObject/VectorCalculation/VectorCalculation.h"
 #include "../GameObject/Objects/CharacterBase/CharacterBase.h"
+#include "../Player/Player.h" 
 #include "../System/Rule/Rule.h"
 #include "../Oil/Oil.h"
 #include "../PlayerOil/PlayerOil.h"
@@ -114,7 +115,7 @@ namespace Calculation
     {
         if (!player)
         {
-            player = static_cast<CharacterBase*>(GameObjectManager::GetFirstGameObject(ObjectTag::Player));
+            player = static_cast<Player*>(GameObjectManager::GetFirstGameObject(ObjectTag::Player));
         }
         //プレイヤーの向いている方向を取得
         VECTOR dir = player->GetDir();
@@ -139,15 +140,19 @@ namespace Calculation
     /// </summary>
     void Bucket::HandOver()
     {
-        //ゲームパッドの入力状態を取得
-        GetJoypadXInputState(DX_INPUT_PAD1, &gamePadState);
-        //ゲームパッドのBボタンもしくはスペースキーが押されたら
-        if (gamePadState.Buttons[13] || CheckHitKey(KEY_INPUT_SPACE))
+        //プレイヤーが移動制限まで来たら
+        if (player->IsMoveLimit())
         {
-            //オイルを生成
-            GameObjectManager::Entry(new PlayerOil(pos, acquisition));
-            //溜まった量を初期化
-            acquisition = 0;
+            //ゲームパッドの入力状態を取得
+            GetJoypadXInputState(DX_INPUT_PAD1, &gamePadState);
+            //ゲームパッドのBボタンもしくはスペースキーが押されたら
+            if (gamePadState.Buttons[13] || CheckHitKey(KEY_INPUT_SPACE))
+            {
+                //オイルを生成
+                GameObjectManager::Entry(new PlayerOil(pos, acquisition));
+                //溜まった量を初期化
+                acquisition = 0;
+            }
         }
     }
 }

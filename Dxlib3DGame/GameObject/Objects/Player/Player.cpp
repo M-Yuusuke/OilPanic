@@ -41,6 +41,7 @@ namespace Calculation
         animTypeID = 0;
         rotateNow = false;
         attack = false;
+        moveLimitFlag = false;
 
         pos = FirstPos;
         dir = FirstDir;
@@ -185,11 +186,17 @@ namespace Calculation
             }
         }
 
-        //左右の移動制限
+        //左右の移動制限内
         if ((pos + velocity).x >= -MoveLimit && (pos + velocity).x <= MoveLimit)
         {
             //移動処理
             pos += velocity;
+            moveLimitFlag = false;
+        }
+        //移動制限
+        else
+        {
+            moveLimitFlag = true;
         }
 
         //3Dモデルのポジション設定

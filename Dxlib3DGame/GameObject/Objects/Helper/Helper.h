@@ -1,5 +1,5 @@
 #pragma once
-#include "../Dxlib3DGame/GameObject/Objects/CharacterBase/CharacterBase.h"
+#include "../CharacterBase/CharacterBase.h"
 namespace Calculation
 {
     class Helper : public CharacterBase

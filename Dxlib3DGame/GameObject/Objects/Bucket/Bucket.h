@@ -1,5 +1,6 @@
 #pragma once
 #include "../GameObject/Objects/CharacterBase/CharacterBase.h"
+#include "../Player/Player.h"
 
 namespace Calculation
 {
@@ -74,7 +75,7 @@ namespace Calculation
         const int AcquisitionLimit = 3;
 
         //プレイヤーのポインタ
-        CharacterBase* player;
+        Player* player;
         //現在の獲得数
         int acquisition;
         //ゲームパッド入力状態

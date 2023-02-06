@@ -41,6 +41,12 @@ namespace Calculation
         /// <param name="other">当たっているオブジェクトのポインタ</param>
         void OnCollisionEnter(GameObjectBase* other)override;
 
+        /// <summary>
+        /// 移動制限フラグを返す
+        /// </summary>
+        /// <returns>移動制限フラグ</returns>
+        bool IsMoveLimit()const { return moveLimitFlag; }
+
     private:
         /// <summary>
         /// モデルの読み込み
@@ -74,5 +80,8 @@ namespace Calculation
 
         //ゲームパッド入力状態
         XINPUT_STATE gamePadState;
+
+        //移動制限に来たか動画のフラグ
+        bool moveLimitFlag;
     };
 }

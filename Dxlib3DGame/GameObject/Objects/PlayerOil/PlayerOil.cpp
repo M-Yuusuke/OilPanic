@@ -12,10 +12,10 @@ namespace Calculation
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    PlayerOil::PlayerOil(VECTOR& pos, float scale):
+    PlayerOil::PlayerOil(VECTOR& pos, int scale):
         GameObjectBase(ObjectTag::PlayerOil,pos)
     {
-        magnification = scale;
+        magnification = (float)scale;
         Initialize();
         ModelLoad();
     }
@@ -111,7 +111,7 @@ namespace Calculation
     /// </summary>
     void PlayerOil::Drop(float deltaTime)
     {
-        pos.y += deltaTime * DropSpeed;
+        pos.y -= deltaTime * DropSpeed;
         MV1SetPosition(modelHandle, pos);
     }
 }

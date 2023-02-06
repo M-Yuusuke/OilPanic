@@ -1,14 +1,18 @@
 #pragma once
 #include "../GameObject/GameObjectBase/GameObjectBase.h"
+#include "../Bucket/Bucket.h"
 namespace Calculation
 {
+    /// <summary>
+    /// プレイヤーが汲み取ったオイルに関する処理を行うクラス
+    /// </summary>
     class PlayerOil : public GameObjectBase
     {
     public:
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        PlayerOil(VECTOR& pos,float scale);
+        PlayerOil(VECTOR& pos,int scale);
 
         /// <summary>
         /// デストラクタ
@@ -48,7 +52,7 @@ namespace Calculation
         void Drop(float deltaTime);
 
         //落下速度
-        const float DropSpeed = 100.0f;
+        const float DropSpeed = 500.0f;
         //当たり判定球の半径
         const float Radius = 50.0f;
         //ローカル座標
