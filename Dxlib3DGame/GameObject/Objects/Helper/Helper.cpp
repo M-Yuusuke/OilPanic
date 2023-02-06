@@ -20,6 +20,7 @@ namespace Calculation
     /// </summary>
     Helper::~Helper()
     {
+        AssetManager::ReleaseMesh(modelHandle);
         modelHandle = -1;
     }
 
@@ -30,6 +31,8 @@ namespace Calculation
     {
         animTypeID = 0;
         coolTime = MaxCoolTime;
+        pos = FirstPos;
+        dir = { 1,0,0 };
     }
 
     /// <summary>
@@ -69,6 +72,9 @@ namespace Calculation
         //モデルの読み込み
         modelHandle = AssetManager::GetMesh("../Data/Assets/Josh/Model.mv1");
 
+        //アニメーションコントローラーの生成
+        animControl = new AnimationController(modelHandle);
+
         //アニメーションを追加
         animControl->AddAnimation("../Data/Assets/Josh/Idle.mv1");      //待機モーション
         animControl->AddAnimation("../Data/Assets/Josh/Run.mv1");       //移動モーション
@@ -98,17 +104,29 @@ namespace Calculation
         {
             //停止時間の処理
             coolTime -= deltaTime;
+            //待機モーション中でなければ待機モーションに変更
+            if (animTypeID != 0)
+            {
+                animTypeID = 0;
+                animControl->StartAnimation(animTypeID);
+            }
         }
         if (coolTime <= 0)
         {
-            //左端の移動制限まで来たら反転
-            if (pos.x <= -MoveLimit)
+            //移動モーション中でなければ移動モーションに変更
+            if (animTypeID != 1)
+            {
+                animTypeID = 1;
+                animControl->StartAnimation(animTypeID);
+            }
+            //左端の移動制限まで来たら一定時間停止後反対方向に移動
+            if (pos.x <= -MoveLimitX)
             {
                 dir = RightDir;
                 coolTime = MaxCoolTime;
             }
-            //右端の移動制限まで来たら反転
-            if (pos.x >= MoveLimit)
+            //右端の移動制限まで来たら一定時間停止後反対方向に移動
+            if (pos.x >= MoveLimitX)
             {
                 dir = LeftDir;
                 coolTime = MaxCoolTime;

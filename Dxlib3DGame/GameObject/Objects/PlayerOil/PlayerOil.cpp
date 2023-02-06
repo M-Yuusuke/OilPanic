@@ -25,6 +25,8 @@ namespace Calculation
     /// </summary>
     PlayerOil::~PlayerOil()
     {
+        AssetManager::ReleaseMesh(modelHandle);
+        modelHandle = -1;
     }
 
     /// <summary>

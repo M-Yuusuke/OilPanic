@@ -8,6 +8,7 @@
 #include "../GameObject/Objects/Oil/Oil.h"
 #include "../GameObject/Objects/Bucket/Bucket.h"
 #include "../../System/Rule/Rule.h"
+#include "../GameObject/Objects/Helper/Helper.h"
 
 Initialize* Initialize::Instance = nullptr;
 
@@ -49,6 +50,7 @@ SceneBase* Initialize::Update()
     }
     Calculation::GameObjectManager::Entry(new Calculation::Camera);
     Calculation::GameObjectManager::Entry(new Calculation::Bucket);
+    Calculation::GameObjectManager::Entry(new Calculation::Helper);
 
     Calculation::GameObjectManager::Init();
     rule->Initialize();

@@ -47,6 +47,7 @@ namespace Calculation
     {
         //ˆÚ“®ˆ—
         Move();
+        //‹‚‚İæ‚è—Ê§ŒÀ
         if (acquisition > 0)
         {
             HandOver();

@@ -63,7 +63,7 @@ namespace Calculation
         static int missCount;
         
         //落下の下限値
-        const float LowerLimitPosY = -10.0f;
+        const float LowerLimitPosY = 250.0f;
         //落下クールタイムの最大値(乱数)
         float MaxCoolTime;
         //クールタイムを保存する変数
