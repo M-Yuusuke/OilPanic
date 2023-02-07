@@ -118,6 +118,9 @@
     <Filter Include="GameObject\Objects\Characters\Helper">
       <UniqueIdentifier>{d00e1d12-d3d5-4e43-a64f-f00beef7ddb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\UI\TimeUI">
+      <UniqueIdentifier>{685ed499-2bc7-4ec0-8b90-86c59ab5fc25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -206,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\Objects\Helper\Helper.cpp">
       <Filter>GameObject\Objects\Characters\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="System\UI\TimeUI\TimeUI.cpp">
+      <Filter>System\UI\TimeUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\Objects\Helper\Helper.h">
       <Filter>GameObject\Objects\Characters\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="System\UI\TimeUI\TimeUI.h">
+      <Filter>System\UI\TimeUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

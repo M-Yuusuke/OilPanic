@@ -187,6 +187,7 @@
     <ClCompile Include="System\Rule\Rule.cpp" />
     <ClCompile Include="System\UI\BucketUI\BucketUI.cpp" />
     <ClCompile Include="System\UI\ScoreUI\ScoreUI.cpp" />
+    <ClCompile Include="System\UI\TimeUI\TimeUI.cpp" />
     <ClCompile Include="System\UI\UIBase\UIBase.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +220,7 @@
     <ClInclude Include="System\Rule\Rule.h" />
     <ClInclude Include="System\UI\BucketUI\BucketUI.h" />
     <ClInclude Include="System\UI\ScoreUI\ScoreUI.h" />
+    <ClInclude Include="System\UI\TimeUI\TimeUI.h" />
     <ClInclude Include="System\UI\UIBase\UIBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

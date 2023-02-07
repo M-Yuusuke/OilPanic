@@ -58,9 +58,6 @@ namespace Calculation
         const VECTOR FirstLocalPos = { 0,25.0f,0 };
         //“–‚½‚è”»’è‹…‚Ì”¼Œa
         const float Radius = 20.0f;
-
-        //ƒ~ƒX‚µ‚½‰ñ”
-        static int missCount;
         
         //—‰º‚Ì‰ºŒÀ’l
         const float LowerLimitPosY = 250.0f;

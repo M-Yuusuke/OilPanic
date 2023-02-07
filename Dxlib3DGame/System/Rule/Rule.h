@@ -24,10 +24,25 @@ public:
     /// </summary>
     void Initialize();
 
+    /// <summary>
+    /// 更新処理
+    /// </summary>
     void Update();
+
+    /// <summary>
+    /// 終了条件判定
+    /// </summary>
+    /// <returns>終了条件を満たしていればtrue、満たしていなければfalse</returns>
+    bool Judgment();
 
 
     //時間関係処理
+
+    /// <summary>
+    /// 残り時間を返す
+    /// </summary>
+    /// <returns>残り時間</returns>
+    float GetTimeLimit()const { return timeLimit; }
     
     /// <summary>
     /// フレームの開始時間
@@ -70,7 +85,7 @@ public:
     /// <summary>
     /// ミスカウント加算
     /// </summary>
-    void AddMissCount() { instance->missCount++; }
+    static void AddMissCount() { instance->missCount++; }
 
     /// <summary>
     /// ミスカウントを返す
@@ -94,7 +109,12 @@ private:
 
     //ボーナス
     const int Bonus[3] = { 1,2,5 };
+    //ミスの最大値
+    const int MaxMissCount = 3;
+    //制限時間の最大値
+    const float MaxTimeLimit = 30;
 
+    float timeLimit;
     //フレーム開始時間
     int nowTime;
     //前フレームの開始時間
@@ -106,7 +126,5 @@ private:
     int score;
     //ミスカウント
     int missCount;
-    //バケツのポインタ
-    Calculation::Bucket* bucket;
 };
 

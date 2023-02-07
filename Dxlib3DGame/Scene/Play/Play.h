@@ -2,6 +2,7 @@
 #include "../SceneBase/SceneBase.h"
 class ScoreUI;
 class BucketUI;
+class TimeUI;
 class Play : public SceneBase
 {
 public:
@@ -19,5 +20,6 @@ private:
     static Play* Instance;
     ScoreUI* scoreUI;
     BucketUI* bucketUI;
+    TimeUI* timeUI;
 };
 

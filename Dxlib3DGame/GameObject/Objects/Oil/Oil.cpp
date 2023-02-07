@@ -7,7 +7,6 @@
 
 namespace Calculation
 {
-    int Oil::missCount = -1;
     /// <summary>
     /// コンストラクタ
     /// </summary>
@@ -15,7 +14,6 @@ namespace Calculation
         GameObjectBase(ObjectTag::Oil)
     {
         FirstPos = { 0,0,0 };
-        missCount = 0;
         Initialize();
         ModelLoad();
     }
@@ -27,7 +25,6 @@ namespace Calculation
         GameObjectBase(ObjectTag::Oil, pos)
     {
         FirstPos = pos;
-        missCount = 0;
         Initialize();
         ModelLoad();
     }
@@ -133,7 +130,8 @@ namespace Calculation
         {
             //非表示
             visible = false;
-            missCount++;
+            //ミスカウント加算
+            Rule::AddMissCount();
             //初期化
             Initialize();
         }

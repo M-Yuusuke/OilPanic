@@ -6,13 +6,15 @@
 #include "../../System/Rule/Rule.h"
 #include "../System/UI/ScoreUI/ScoreUI.h"
 #include "../System/UI/BucketUI/BucketUI.h"
+#include "../System/UI/TimeUI/TimeUI.h"
 #include "../GameObject/Objects/Player/Player.h"
 
 Play* Play::Instance = nullptr;
 
 Play::Play():
     scoreUI(new ScoreUI),
-    bucketUI(new BucketUI)
+    bucketUI(new BucketUI),
+    timeUI(new TimeUI)
 {
 }
 
@@ -48,6 +50,13 @@ SceneBase* Play::Update()
     Calculation::GameObjectManager::Collision();
     scoreUI->Update();
     bucketUI->Update();
+    timeUI->Update();
+    rule->Update();
+    //終了条件を満たしていれば次のシーンへ遷移
+    if (rule->Judgment())
+    {
+        sceneManager->NextScene(this);
+    }
     rule->SetPrevTime();
     return this;
 }
@@ -60,5 +69,6 @@ void Play::Draw()
     scoreUI->Draw();
     //バケツメータを描画
     bucketUI->Draw();
+    timeUI->Draw();
     ScreenFlip();
 }

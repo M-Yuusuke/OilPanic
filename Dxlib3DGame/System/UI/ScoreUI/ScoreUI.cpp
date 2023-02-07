@@ -18,6 +18,7 @@ ScoreUI::ScoreUI():
 /// </summary>
 ScoreUI::~ScoreUI()
 {
+    Rule::DestoryInstance();
 }
 
 /// <summary>
@@ -25,7 +26,7 @@ ScoreUI::~ScoreUI()
 /// </summary>
 void ScoreUI::Update()
 {
-    this->score = rule->GetScore();
+    score = rule->GetScore();
 }
 
 /// <summary>

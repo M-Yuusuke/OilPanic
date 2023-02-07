@@ -4,11 +4,11 @@
 Rule* Rule::instance = nullptr;
 
 Rule::Rule() :
+    timeLimit(0),
     nowTime(0),
     deltaTime(0),
     prevTime(0),
-    score(0),
-    bucket(nullptr)
+    score(0)
 {
 }
 
@@ -17,6 +17,20 @@ Rule::~Rule()
     nowTime = NULL;
     deltaTime = NULL;
     prevTime = NULL;
+}
+
+/// <summary>
+/// 終了条件判定
+/// </summary>
+/// <returns>終了条件を満たしていればtrue、満たしていなければfalse</returns>
+bool Rule::Judgment()
+{
+    //ミスが既定値に達するもしくは制限時間切れになったら
+    if (missCount == MaxMissCount || timeLimit <= 0)
+    {
+        return true;
+    }
+    return false;
 }
 
 /// <summary>
@@ -56,8 +70,14 @@ void Rule::Initialize()
     SetNowTime();
     SetDeltaTime();
     SetPrevTime();
+    timeLimit = MaxTimeLimit;
 }
 
+
+/// <summary>
+/// 更新処理
+/// </summary>
 void Rule::Update()
 {
+    timeLimit -= deltaTime;
 }
