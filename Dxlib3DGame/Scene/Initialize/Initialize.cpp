@@ -3,23 +3,21 @@
 #include "../SceneManager/SceneManager.h"
 #include "../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../GameObject/Objects/Player/Player.h"
-#include "../GameObject/Objects/Stage/Stage.h"
 #include "../GameObject/Objects/Camera/Camera.h"
 #include "../GameObject/Objects/Oil/Oil.h"
 #include "../GameObject/Objects/Bucket/Bucket.h"
 #include "../../System/Rule/Rule.h"
 #include "../GameObject/Objects/Helper/Helper.h"
+#include "../GameObject/Objects/Background/Background.h"
 
 Initialize* Initialize::Instance = nullptr;
 
 Initialize::Initialize()
 {
-
 }
 
 Initialize::~Initialize()
 {
-
 }
 
 Initialize* Initialize::CreateInstance()
@@ -42,8 +40,8 @@ void Initialize::DestroyInstance()
 
 SceneBase* Initialize::Update()
 {
+    Calculation::GameObjectManager::Entry(new Calculation::Background);
     Calculation::GameObjectManager::Entry(new Calculation::Player);
-    Calculation::GameObjectManager::Entry(new Calculation::Stage);
     for (int i = 0; i < 3; i++)
     {
         Calculation::GameObjectManager::Entry(new Calculation::Oil(VGet((float)-100 + 100 * i, 500.0f, 0)));

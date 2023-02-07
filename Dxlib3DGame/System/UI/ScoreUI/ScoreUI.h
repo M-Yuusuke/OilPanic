@@ -36,7 +36,7 @@ private:
     //文章のy座標
     const int StringPosY = 20;
     //文字の色
-    const INT4 White = { 255,255,255 };
+    const INT4 Black = { 0,0,0 };
     //ルールクラスのインスタンス
     Rule* rule;
 

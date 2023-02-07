@@ -37,5 +37,5 @@ void ScoreUI::Draw()
     //フォントサイズを指定
     SetFontSize(FontSize);
     //スコア表示
-    DrawFormatString(StringPosX, StringPosY, GetColor(White.x, White.y, White.z), "SCORE %d", score);
+    DrawFormatString(StringPosX, StringPosY, GetColor(Black.x, Black.y, Black.z), "SCORE %d", score);
 }

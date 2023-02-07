@@ -35,5 +35,5 @@ void TimeUI::Draw()
     //フォントサイズを指定
     SetFontSize(FontSize);
     //スコア表示
-    DrawFormatString(StringPosX, StringPosY, GetColor(White.x, White.y, White.z), "Time %2.0f", timeLimit);
+    DrawFormatString(StringPosX, StringPosY, GetColor(Black.x, Black.y, Black.z), "Time %2.0f", timeLimit);
 }

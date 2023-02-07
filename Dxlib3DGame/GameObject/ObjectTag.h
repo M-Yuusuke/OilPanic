@@ -7,12 +7,12 @@ namespace Calculation
     //•K—v‚È‚à‚Ì‚ÍBegin‚ÆEnd‚ÌŠÔ‚É254ŒÂ‚Ü‚Å’è‹`‚Å‚«‚é
     enum class ObjectTag : unsigned char
     {
+        Background,
         Player,
         Helper,
         PlayerOil,
         Oil,
         Bucket,
-        Stage,
         Camera,
         Effect
     };
@@ -25,12 +25,12 @@ namespace Calculation
     */
     constexpr static ObjectTag ObjectTagAll[] =
     {
+        ObjectTag::Background,
         ObjectTag::Player,
         ObjectTag::Helper,
         ObjectTag::PlayerOil,
         ObjectTag::Oil,
         ObjectTag::Bucket,
-        ObjectTag::Stage,
         ObjectTag::Camera,
         ObjectTag::Effect
     };

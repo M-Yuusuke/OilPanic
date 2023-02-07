@@ -34,7 +34,7 @@ private:
     //赤色
     const INT4 Red = { 255,0,0 };
     //黒色
-    const INT4 Black = { 255,255,255 };
+    const INT4 Black = { 0,0,0 };
 
     //メータの拡大率
     const int Magnifincation = 100;

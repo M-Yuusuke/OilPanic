@@ -82,9 +82,6 @@
     <Filter Include="GameObject\Objects\Camera">
       <UniqueIdentifier>{fabbe40c-dc58-41bb-8bd3-43148a82e727}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Objects\Stage">
-      <UniqueIdentifier>{261bae79-5246-4407-9167-b36ce4add1e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObject\Objects\Characters">
       <UniqueIdentifier>{71bec1d2-e8c4-428b-b461-1260d64d1cee}</UniqueIdentifier>
     </Filter>
@@ -120,6 +117,9 @@
     </Filter>
     <Filter Include="System\UI\TimeUI">
       <UniqueIdentifier>{685ed499-2bc7-4ec0-8b90-86c59ab5fc25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Objects\Background">
+      <UniqueIdentifier>{eb7dc991-cadd-480f-a5e7-f26ebad1f279}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,9 +180,6 @@
     <ClCompile Include="GameObject\Collision\CollisionFunction\CollisionFunction.cpp">
       <Filter>GameObject\Collision\CollisionFunction</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Objects\Stage\Stage.cpp">
-      <Filter>GameObject\Objects\Stage</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Objects\Player\Player.cpp">
       <Filter>GameObject\Objects\Characters\Player</Filter>
     </ClCompile>
@@ -212,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="System\UI\TimeUI\TimeUI.cpp">
       <Filter>System\UI\TimeUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Objects\Background\Background.cpp">
+      <Filter>GameObject\Objects\Background</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,9 +275,6 @@
     <ClInclude Include="GameObject\Collision\CollisionFunction\CollisionFunction.h">
       <Filter>GameObject\Collision\CollisionFunction</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Objects\Stage\Stage.h">
-      <Filter>GameObject\Objects\Stage</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject\Objects\Player\Player.h">
       <Filter>GameObject\Objects\Characters\Player</Filter>
     </ClInclude>
@@ -307,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="System\UI\TimeUI\TimeUI.h">
       <Filter>System\UI\TimeUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Objects\Background\Background.h">
+      <Filter>GameObject\Objects\Background</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

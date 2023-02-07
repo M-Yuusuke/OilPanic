@@ -78,13 +78,6 @@ namespace Calculation
     /// <param name="other">当たっているオブジェクトのポインタ</param>
     void Player::OnCollisionEnter(GameObjectBase* other)
     {
-        ObjectTag tag = other->GetTag();
-
-        //ステージとの衝突
-        if (tag == ObjectTag::Stage)
-        {
-            OnCollisionStage(other);
-        }
     }
 
     /// <summary>
