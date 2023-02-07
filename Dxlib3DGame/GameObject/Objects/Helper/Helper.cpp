@@ -123,12 +123,14 @@ namespace Calculation
             if (pos.x <= -MoveLimitX)
             {
                 dir = RightDir;
+                pos.x = -MoveLimitX;
                 coolTime = MaxCoolTime;
             }
             //‰E’[‚ÌˆÚ“®§ŒÀ‚Ü‚Å—ˆ‚½‚çˆê’èŽžŠÔ’âŽ~Œã”½‘Î•ûŒü‚ÉˆÚ“®
             if (pos.x >= MoveLimitX)
             {
                 dir = LeftDir;
+                pos.x = MoveLimitX;
                 coolTime = MaxCoolTime;
             }
             pos += dir * deltaTime * MoveSpeed;

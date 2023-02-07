@@ -39,7 +39,7 @@ private:
     //メータの拡大率
     const int Magnifincation = 100;
     //メータの左上のX座標
-    const int MeterPosX = 50;
+    const int MeterPosX = 500;
     //メータの左上のY座標
     const int MeterPosY = 300;
     //メータの縦幅

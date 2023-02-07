@@ -112,7 +112,7 @@ private:
     //ミスの最大値
     const int MaxMissCount = 3;
     //制限時間の最大値
-    const float MaxTimeLimit = 30;
+    const float MaxTimeLimit = 60;
 
     float timeLimit;
     //フレーム開始時間

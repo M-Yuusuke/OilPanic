@@ -62,7 +62,7 @@ namespace Calculation
         //‘å‚«‚³
         const VECTOR PlayerScale = { 0.5f,0.5f, 0.5f };
         //‰ŠúÀ•W
-        const VECTOR FirstPos = { 0,300,0 };
+        const VECTOR FirstPos = { 0,200,0 };
         //‰ŠúŒü‚«
         const VECTOR FirstDir = { 1,0,0 };
         //ˆÚ“®§ŒÀ

@@ -79,5 +79,16 @@ void Rule::Initialize()
 /// </summary>
 void Rule::Update()
 {
-    timeLimit -= deltaTime;
+    //if (timeLimit > 0.01f)
+    //{
+    //    timeLimit -= deltaTime;
+    //}
+    if (timeLimit <= 0)
+    {
+        timeLimit = 0;
+    }
+    else
+    {
+        timeLimit -= deltaTime;
+    }
 }

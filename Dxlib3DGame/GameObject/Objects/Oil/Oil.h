@@ -53,7 +53,7 @@ namespace Calculation
         //モデルの大きさ
         const VECTOR Scale = { 0.25f,0.25f,0.25f };
         //落下速度
-        const float DropSpeed = -100.0f;
+        const float DropSpeed = -50.0f;
         //当たり判定球の中心座標
         const VECTOR FirstLocalPos = { 0,0,0 };
         //当たり判定球の半径

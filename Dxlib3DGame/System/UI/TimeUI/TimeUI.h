@@ -32,7 +32,7 @@ private:
     //フォントサイズ
     const int FontSize = 48;
     //文章のx座標
-    const int StringPosX = 50;
+    const int StringPosX = 600;
     //文章のy座標
     const int StringPosY = 80;
     //文字の色

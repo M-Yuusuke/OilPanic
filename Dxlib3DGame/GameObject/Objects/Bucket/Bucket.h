@@ -68,9 +68,9 @@ namespace Calculation
         //プレイヤーが右向きの時のプレイヤーとの相対位置
         const VECTOR RightRelativePos = { 50.0f, 100.0f, 0 };
         //モデルの大きさ
-        const VECTOR Scale = { 1.0f,1.0f ,1.0f };
+        const VECTOR Scale = { 2.0f,2.0f,2.0f };
         //当たり判定球の半径
-        const float Radius = 30.0f;
+        const float Radius = 50.0f;
         //獲得上限
         const int AcquisitionLimit = 3;
 
