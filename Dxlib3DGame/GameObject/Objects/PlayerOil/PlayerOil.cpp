@@ -94,7 +94,7 @@ namespace Calculation
     void PlayerOil::ModelLoad()
     {
         //モデルロード
-        modelHandle = AssetManager::GetMesh("../Data/Assets/EXP/Model.mv1");
+        modelHandle = AssetManager::GetMesh("../Data/Assets/Oil/Model.mv1");
 
         //そのままだとステージに対してモデルが大きいので縮小
         MV1SetScale(modelHandle, scale);

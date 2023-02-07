@@ -92,7 +92,7 @@ namespace Calculation
     void Oil::ModelLoad()
     {
         //モデルロード　モデルデータは仮なので後に変更
-        modelHandle = AssetManager::GetMesh("../Data/Assets/EXP/Model.mv1");
+        modelHandle = AssetManager::GetMesh("../Data/Assets/Oil/Model.mv1");
 
         //モデルの大きさをセット
         MV1SetScale(modelHandle, Scale);

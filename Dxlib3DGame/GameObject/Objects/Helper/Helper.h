@@ -52,7 +52,7 @@ namespace Calculation
         //当たり判定球の初期配置
         const VECTOR FirstLocalPos = { 0,50.0f,0 };
         //モデルの初期位置
-        const VECTOR FirstPos = { 0,70.0f,0 };
+        const VECTOR FirstPos = { 350.0f,-100.0f,0 };
         //当たり判定球の半径
         const float Radius = 30.0f;
         //最大停止時間
@@ -60,7 +60,7 @@ namespace Calculation
         //移動速度
         const float MoveSpeed = 300.0f;
         //移動制限
-        const float MoveLimitX = 250.0f;
+        const float MoveLimitX = 350.0f;
 
         //移動停止時間
         float coolTime;

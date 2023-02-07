@@ -44,7 +44,7 @@ SceneBase* Initialize::Update()
     Calculation::GameObjectManager::Entry(new Calculation::Player);
     for (int i = 0; i < 3; i++)
     {
-        Calculation::GameObjectManager::Entry(new Calculation::Oil(VGet((float)-100 + 100 * i, 500.0f, 0)));
+        Calculation::GameObjectManager::Entry(new Calculation::Oil(VGet((float)-200 + 200 * i, 600.0f, 0)));
     }
     Calculation::GameObjectManager::Entry(new Calculation::Camera);
     Calculation::GameObjectManager::Entry(new Calculation::Bucket);

@@ -66,7 +66,7 @@ namespace Calculation
         //‰ŠúŒü‚«
         const VECTOR FirstDir = { 1,0,0 };
         //ˆÚ“®§ŒÀ
-        const float MoveLimit = 200.0f;
+        const float MoveLimit = 300.0f;
 
         //‹…‚Ì‰Šúƒ[ƒJƒ‹À•W
         const VECTOR FirstLocalPos = { 0, 50.0f, 0 };

@@ -55,7 +55,7 @@ namespace Calculation
         //—‰º‘¬“x
         const float DropSpeed = -100.0f;
         //“–‚½‚è”»’è‹…‚Ì’†SÀ•W
-        const VECTOR FirstLocalPos = { 0,25.0f,0 };
+        const VECTOR FirstLocalPos = { 0,0,0 };
         //“–‚½‚è”»’è‹…‚Ì”¼Œa
         const float Radius = 20.0f;
         
