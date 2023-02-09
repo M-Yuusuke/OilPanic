@@ -121,6 +121,9 @@
     <Filter Include="GameObject\Objects\Background">
       <UniqueIdentifier>{eb7dc991-cadd-480f-a5e7-f26ebad1f279}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Objects\Characters\Customer">
+      <UniqueIdentifier>{e8a5b46c-10a4-446b-9398-147ad188e0db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -212,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\Objects\Background\Background.cpp">
       <Filter>GameObject\Objects\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Objects\Customer\Customer.cpp">
+      <Filter>GameObject\Objects\Characters\Customer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\Objects\Background\Background.h">
       <Filter>GameObject\Objects\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Objects\Customer\Customer.h">
+      <Filter>GameObject\Objects\Characters\Customer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

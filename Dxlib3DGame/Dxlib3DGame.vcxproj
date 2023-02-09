@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -172,6 +172,7 @@
     <ClCompile Include="GameObject\Objects\Bucket\Bucket.cpp" />
     <ClCompile Include="GameObject\Objects\Camera\Camera.cpp" />
     <ClCompile Include="GameObject\Objects\CharacterBase\CharacterBase.cpp" />
+    <ClCompile Include="GameObject\Objects\Customer\Customer.cpp" />
     <ClCompile Include="GameObject\Objects\Helper\Helper.cpp" />
     <ClCompile Include="GameObject\Objects\Oil\Oil.cpp" />
     <ClCompile Include="GameObject\Objects\PlayerOil\PlayerOil.cpp" />
@@ -205,6 +206,7 @@
     <ClInclude Include="GameObject\Objects\Bucket\Bucket.h" />
     <ClInclude Include="GameObject\Objects\Camera\Camera.h" />
     <ClInclude Include="GameObject\Objects\CharacterBase\CharacterBase.h" />
+    <ClInclude Include="GameObject\Objects\Customer\Customer.h" />
     <ClInclude Include="GameObject\Objects\Helper\Helper.h" />
     <ClInclude Include="GameObject\Objects\Oil\Oil.h" />
     <ClInclude Include="GameObject\Objects\PlayerOil\PlayerOil.h" />

@@ -35,6 +35,8 @@ namespace Calculation
     /// </summary>
     void Bucket::Initialize()
     {
+        alive = true;
+        visible = true;
         //Šl“¾”‚Ì‰Šú‰»
         acquisition = 0;
     }

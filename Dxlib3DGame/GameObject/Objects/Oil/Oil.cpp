@@ -34,6 +34,11 @@ namespace Calculation
     /// </summary>
     Oil::~Oil()
     {
+        //モデルデータ削除
+        AssetManager::ReleaseMesh(modelHandle);
+        modelHandle = -1;
+        //オブジェクトデータ削除
+        GameObjectManager::Release(this);
     }
 
     /// <summary>

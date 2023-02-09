@@ -40,12 +40,6 @@ SceneBase* Play::Update()
 {
     rule->SetNowTime();
     rule->SetDeltaTime();
-    Calculation::GameObjectBase* player = Calculation::GameObjectManager::GetFirstGameObject(Calculation::ObjectTag::Player);
-    //プレイヤーの体力が尽きたら終了
-    if (player->IsAlive())
-    {
-        sceneManager->NextScene(this);
-    }
     Calculation::GameObjectManager::Update(rule->GetDeltaTime());
     Calculation::GameObjectManager::Collision();
     scoreUI->Update();

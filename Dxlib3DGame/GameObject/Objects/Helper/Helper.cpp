@@ -2,6 +2,7 @@
 #include "../GameObject/AnimationController/AnimationController.h"
 #include "../GameObject/VectorCalculation/VectorCalculation.h"
 #include "../GameObject/AssetManager/AssetManager.h"
+#include "../GameObject/GameObjectManager/GameObjectManager.h" 
 
 namespace Calculation
 {
@@ -22,6 +23,8 @@ namespace Calculation
     {
         AssetManager::ReleaseMesh(modelHandle);
         modelHandle = -1;
+        delete animControl;
+        GameObjectManager::Release(this);
     }
 
     /// <summary>

@@ -74,16 +74,8 @@ namespace Calculation
                 //当たったら非表示
                 visible = false;
                 //ボーナス込みのスコア加算
-                Rule::AcquisitionScore(bucket->GetAcquisition());
-            }
-        }
-        if (tag == ObjectTag::Player)
-        {
-            if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
-            {
-                //非表示
-                visible = false;
-                //
+                Rule::AcquisitionScore((int)magnification - 1);
+                alive = false;
             }
         }
     }

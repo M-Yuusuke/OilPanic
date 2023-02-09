@@ -28,6 +28,7 @@ namespace Calculation
         delete animControl;
         modelHandle = -1;
         collisionModel = -1;
+        GameObjectManager::Release(this);
     }
 
     /// <summary>

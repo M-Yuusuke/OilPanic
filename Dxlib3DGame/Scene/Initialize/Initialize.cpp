@@ -9,6 +9,7 @@
 #include "../../System/Rule/Rule.h"
 #include "../GameObject/Objects/Helper/Helper.h"
 #include "../GameObject/Objects/Background/Background.h"
+#include "../GameObject/Objects/Customer/Customer.h"
 
 Initialize* Initialize::Instance = nullptr;
 
@@ -49,6 +50,7 @@ SceneBase* Initialize::Update()
     Calculation::GameObjectManager::Entry(new Calculation::Camera);
     Calculation::GameObjectManager::Entry(new Calculation::Bucket);
     Calculation::GameObjectManager::Entry(new Calculation::Helper);
+    Calculation::GameObjectManager::Entry(new Calculation::Customer);
 
     Calculation::GameObjectManager::Init();
     rule->Initialize();

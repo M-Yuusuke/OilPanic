@@ -8,7 +8,8 @@ Rule::Rule() :
     nowTime(0),
     deltaTime(0),
     prevTime(0),
-    score(0)
+    score(0),
+    missCount(0)
 {
 }
 
@@ -71,6 +72,7 @@ void Rule::Initialize()
     SetDeltaTime();
     SetPrevTime();
     timeLimit = MaxTimeLimit;
+    missCount = 0;
 }
 
 
@@ -79,10 +81,6 @@ void Rule::Initialize()
 /// </summary>
 void Rule::Update()
 {
-    //if (timeLimit > 0.01f)
-    //{
-    //    timeLimit -= deltaTime;
-    //}
     if (timeLimit <= 0)
     {
         timeLimit = 0;

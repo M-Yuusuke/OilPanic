@@ -1,6 +1,7 @@
+#include <vector>
 #include "GameObjectManager.h"
 #include "../Objects/CharacterBase/CharacterBase.h"
-
+using namespace std;
 namespace Calculation
 {
     GameObjectManager* GameObjectManager::Instance = nullptr;
@@ -139,24 +140,25 @@ namespace Calculation
         Instance->PendingObjects.clear();
 
         //全てのアクター内で死んでいるアクターをDeadObjectへ一時保管
-        std::vector<GameObjectBase*> DeadObjects;
+        std::vector<GameObjectBase*> deadObjects;
         for (auto& tag : ObjectTagAll)
         {
-            for (int i = 0; i < Instance->Objects[tag].size(); i++)
+            for (auto obj : Instance->Objects[tag])
             {
-                if (!Instance->Objects[tag][i]->IsAlive())
+                if (!obj->IsAlive())
                 {
-                    DeadObjects.emplace_back(Instance->Objects[tag][i]);
+                    deadObjects.emplace_back(obj);
                 }
             }
+            Instance->Objects[tag].erase(remove_if(begin(Instance->Objects[tag]), end(Instance->Objects[tag]),
+                [](GameObjectBase* g) {return !g->IsAlive(); }), cend(Instance->Objects[tag]));
         }
-
-        //死んでいるオブジェクトを削除
-        for (auto& DeadObj : DeadObjects)
+        // 死んでいるGameObjectをここでdelete
+        while (!deadObjects.empty())
         {
-            delete DeadObj;
+            delete deadObjects.back();
+            deadObjects.pop_back();
         }
-        DeadObjects.clear();
     }
 
     /// <summary>
@@ -185,11 +187,17 @@ namespace Calculation
     /// </summary>
     void GameObjectManager::Collision()
     {
-        //プレイヤーとオイルとの当たり判定
+        //バケツとオイルとの当たり判定
         for (int oilNum = 0; oilNum < Instance->Objects[ObjectTag::Oil].size(); oilNum++)
         {
-            //バケツ対オイル
-            Instance->Objects[ObjectTag::Bucket][0]->OnCollisionEnter(Instance->Objects[ObjectTag::Oil][oilNum]);
+            auto Obje1 = Instance->Objects[ObjectTag::Bucket][0];
+            auto Obje2 = Instance->Objects[ObjectTag::Oil][oilNum];
+            Obje1->OnCollisionEnter(Obje2);
+        }
+        //プレイヤーが汲み取ったオイルとお手伝いさんとの当たり判定
+        for (int playerOilNum = 0; playerOilNum < Instance->Objects[ObjectTag::PlayerOil].size(); playerOilNum++)
+        {
+            Instance->Objects[ObjectTag::PlayerOil][playerOilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Helper][0]);
         }
         
 

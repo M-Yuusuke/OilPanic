@@ -42,7 +42,7 @@ public:
     /// 残り時間を返す
     /// </summary>
     /// <returns>残り時間</returns>
-    float GetTimeLimit()const { return timeLimit; }
+    float GetTimeLimit()const { return instance->timeLimit; }
     
     /// <summary>
     /// フレームの開始時間
@@ -58,7 +58,7 @@ public:
     /// 1フレームの経過時間を返す
     /// </summary>
     /// <returns>1フレームの経過時間</returns>
-    float GetDeltaTime()const { return deltaTime; }
+    float GetDeltaTime()const { return instance->deltaTime; }
 
     /// <summary>
     /// 前フレームの開始時間をセット
