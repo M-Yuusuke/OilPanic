@@ -29,22 +29,23 @@ namespace Calculation
         /// </summary>
         /// <param name="other">衝突確認をするオブジェクトのポインタ</param>
         void OnCollisionEnter(GameObjectBase* other)override;
-    private:
-        /// <summary>
-        /// モデルの読み込み
-        /// </summary>
-        void ModelLoad();
 
         /// <summary>
         /// オイルに当たった時のリアクションを行う
         /// </summary>
         void Reaction();
 
+    private:
+        /// <summary>
+        /// モデルの読み込み
+        /// </summary>
+        void ModelLoad();
+
         //モデルの初期配置
-        const VECTOR FirstPos = { -500.0f,-500.0f,0 };
+        const VECTOR FirstPos = { -400.0f,-500.0f,0 };
         //当たり判定球の中心のローカル座標
-        const VECTOR FirstLocalPos = {};
+        const VECTOR FirstLocalPos = { 0,50.0f,0 };
         //当たり判定球の半径
-        const float Radius = 30.0f;
+        const float Radius = 50.0f;
     };
 }

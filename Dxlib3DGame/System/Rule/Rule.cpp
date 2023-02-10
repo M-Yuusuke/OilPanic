@@ -72,6 +72,7 @@ void Rule::Initialize()
     SetDeltaTime();
     SetPrevTime();
     timeLimit = MaxTimeLimit;
+    score = 0;
     missCount = 0;
 }
 

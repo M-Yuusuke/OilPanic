@@ -170,10 +170,7 @@ namespace Calculation
         {
             for (int i = 0; i < Instance->Objects[tag].size(); i++)
             {
-                //if (Instance->Objects[tag][i]->IsAlive())
-                //{
-                //    Instance->Objects[tag][i]->Draw();
-                //}
+                //描画対象だけ描画
                 if (Instance->Objects[tag][i]->IsVisible())
                 {
                     Instance->Objects[tag][i]->Draw();
@@ -190,22 +187,15 @@ namespace Calculation
         //バケツとオイルとの当たり判定
         for (int oilNum = 0; oilNum < Instance->Objects[ObjectTag::Oil].size(); oilNum++)
         {
-            auto Obje1 = Instance->Objects[ObjectTag::Bucket][0];
-            auto Obje2 = Instance->Objects[ObjectTag::Oil][oilNum];
-            Obje1->OnCollisionEnter(Obje2);
+            Instance->Objects[ObjectTag::Bucket][0]->OnCollisionEnter(Instance->Objects[ObjectTag::Oil][oilNum]);
         }
-        //プレイヤーが汲み取ったオイルとお手伝いさんとの当たり判定
         for (int playerOilNum = 0; playerOilNum < Instance->Objects[ObjectTag::PlayerOil].size(); playerOilNum++)
         {
+            //プレイヤーが汲み取ったオイルとお手伝いさんとの当たり判定
             Instance->Objects[ObjectTag::PlayerOil][playerOilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Helper][0]);
+            //お客とプレイヤーが汲み取ったオイルとの当たり判定
+            Instance->Objects[ObjectTag::PlayerOil][playerOilNum]->OnCollisionEnter(Instance->Objects[ObjectTag::Customer][0]);
         }
-        
-
-        ////プレイヤーとステージの当たり判定
-        //for (int bgNum = 0; bgNum < Instance->Objects[ObjectTag::Stage].size(); bgNum++)
-        //{
-        //    Instance->Objects[ObjectTag::Player][0]->OnCollisionEnter(Instance->Objects[ObjectTag::Stage][bgNum]);
-        //}
     }
 
     /// <summary>

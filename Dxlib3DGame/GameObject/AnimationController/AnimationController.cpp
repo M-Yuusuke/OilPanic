@@ -18,6 +18,10 @@ namespace Calculation
 
     AnimationController::~AnimationController()
     {
+        //アニメーション解除
+        MV1DetachAnim(modelHandle, attachedIndex);
+        //アニメーションデータの入っている構造体をすべて削除
+        animDatas.clear();
     }
 
     /// <summary>

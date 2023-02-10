@@ -37,7 +37,7 @@ namespace Calculation
     {
         alive = true;
         visible = true;
-        //Šl“¾”‚Ì‰Šú‰»
+        //‹‚‚İæ‚è—Ê‚Ì‰Šú‰»
         acquisition = 0;
     }
 

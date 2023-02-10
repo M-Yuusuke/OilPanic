@@ -24,7 +24,7 @@ namespace Calculation
         AssetManager::ReleaseMesh(modelHandle);
         modelHandle = -1;
         delete animControl;
-        GameObjectManager::Release(this);
+        animControl = nullptr;
     }
 
     /// <summary>

@@ -20,7 +20,11 @@ Play::Play():
 
 Play::~Play()
 {
+    delete scoreUI;
+    delete bucketUI;
+    delete timeUI;
 }
+
 Play* Play::CreateInstance()
 {
     if (!Instance)
@@ -49,7 +53,7 @@ SceneBase* Play::Update()
     //I—¹ðŒ‚ð–ž‚½‚µ‚Ä‚¢‚ê‚ÎŽŸ‚ÌƒV[ƒ“‚Ö‘JˆÚ
     if (rule->Judgment())
     {
-        sceneManager->NextScene(this);
+        return sceneManager->NextScene(this);
     }
     rule->SetPrevTime();
     return this;

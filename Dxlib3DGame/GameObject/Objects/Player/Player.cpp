@@ -25,10 +25,10 @@ namespace Calculation
     Player::~Player()
     {
         AssetManager::ReleaseMesh(modelHandle);
-        delete animControl;
         modelHandle = -1;
         collisionModel = -1;
-        GameObjectManager::Release(this);
+        delete animControl;
+        animControl = nullptr;
     }
 
     /// <summary>
@@ -101,14 +101,6 @@ namespace Calculation
 
         //待機モーションをセット
         animControl->StartAnimation(animTypeID);
-
-        //当たり判定球セット
-        collisionType = CollisionType::Sphere;
-        collisionSphere.SetLocalCenter(FirstLocalPos);
-        collisionSphere.SetRadius(Radius);
-
-        //足元当たり判定線分セット
-        //collisionLine = LineSegment(LineStart, LineEnd);
     }
 
     /// <summary>

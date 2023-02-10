@@ -4,6 +4,7 @@
 #include "../GameObject/AssetManager/AssetManager.h"
 #include "../GameObject/GameObjectManager/GameObjectManager.h"
 #include "../GameObject/VectorCalculation/VectorCalculation.h"
+#include "../Customer/Customer.h"
 #include "../System/Rule/Rule.h"
 #include "../Bucket/Bucket.h"
 
@@ -78,6 +79,21 @@ namespace Calculation
                 alive = false;
             }
         }
+
+        //お客さんとの当たり判定
+        if (tag == ObjectTag::Customer)
+        {
+            if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
+            {
+                //当たったら非表示
+                visible = false;
+                //ミスカウントを加算
+                Rule::AddMissCount();
+                alive = false;
+                //リアクションをする
+                static_cast<Customer*>(other)->Reaction();
+            }
+        }
     }
 
     /// <summary>
@@ -105,7 +121,18 @@ namespace Calculation
     /// </summary>
     void PlayerOil::Drop(float deltaTime)
     {
-        pos.y -= deltaTime * DropSpeed;
-        MV1SetPosition(modelHandle, pos);
+        //下限値に達するまでの間落下させる
+        if (pos.y >= LowerLimitPosY)
+        {
+            pos.y -= deltaTime * DropSpeed;
+            MV1SetPosition(modelHandle, pos);
+        }
+        //下限値よりも下に来たら非表示にする
+        else if (pos.y < LowerLimitPosY)
+        {
+            //非表示
+            visible = false;
+            alive = false;
+        }
     }
 }

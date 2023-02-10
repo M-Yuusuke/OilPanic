@@ -23,8 +23,7 @@ namespace Calculation
         modelHandle = -1;
         //アニメーションコントローラを削除
         delete animControl;
-        //オブジェクトデータを削除
-        GameObjectManager::Release(this);
+        animControl = nullptr;
     }
 
     /// <summary>
@@ -45,6 +44,7 @@ namespace Calculation
     void Customer::Update(float deltaTime)
     {
         animControl->AddAnimationTime(deltaTime);
+        Rotate();
         CollisionUpdate();
     }
 
@@ -54,7 +54,6 @@ namespace Calculation
     void Customer::Draw()
     {
         MV1DrawModel(modelHandle);
-        Rotate();
         DrawCollider();
     }
 
@@ -71,8 +70,31 @@ namespace Calculation
             //当たり判定球同士が当たったら
             if (collisionFunction.CollisionPair(other->GetCollisionSphere(), collisionSphere))
             {
+                //当たった際のリアクション
                 Reaction();
+                //ミスカウントを加算
+                Rule::AddMissCount();
             }
+        }
+    }
+
+    /// <summary>
+    /// オイルに当たった時のリアクションを行う
+    /// </summary>
+    void Customer::Reaction()
+    {
+        //怒りモーション中でなければ怒りモーションを再生
+        if (animTypeID != 1)
+        {
+            animTypeID = 1;
+            animControl->StartAnimation(animTypeID);
+        }
+
+        //怒りモーションが再生中でなければ待機モーションを再生
+        if (!animControl->IsPlaying(1))
+        {
+            animTypeID = 0;
+            animControl->StartAnimation(animTypeID);
         }
     }
 
@@ -100,18 +122,5 @@ namespace Calculation
         collisionType = CollisionType::Sphere;
         collisionSphere.SetLocalCenter(FirstLocalPos);
         collisionSphere.SetRadius(Radius);
-    }
-
-    /// <summary>
-    /// オイルに当たった時のリアクションを行う
-    /// </summary>
-    void Customer::Reaction()
-    {
-        //怒りモーション中でなければ怒りモーションを再生
-        if (animTypeID != 1)
-        {
-            animTypeID = 1;
-            animControl->StartAnimation(animTypeID);
-        }
     }
 }

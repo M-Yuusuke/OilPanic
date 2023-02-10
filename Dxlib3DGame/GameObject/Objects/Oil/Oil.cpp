@@ -37,8 +37,6 @@ namespace Calculation
         //モデルデータ削除
         AssetManager::ReleaseMesh(modelHandle);
         modelHandle = -1;
-        //オブジェクトデータ削除
-        GameObjectManager::Release(this);
     }
 
     /// <summary>
@@ -51,7 +49,7 @@ namespace Calculation
         //設定されたポジションにセット
         pos = FirstPos;
         //1～5秒のクールタイムをセット
-        MaxCoolTime = (float)(1 + GetRand(9));
+        MaxCoolTime = (float)(1 + GetRand(14));
         //クールタイムを設定
         CoolTime = MaxCoolTime;
     }
@@ -75,20 +73,6 @@ namespace Calculation
     {
         MV1DrawModel(modelHandle);
         DrawCollider();
-    }
-
-    /// <summary>
-    /// 当たり判定処理
-    /// </summary>
-    /// <param name="other">当たっているオブジェクトのポインタ</param>
-    void Oil::OnCollisionEnter(GameObjectBase* other)
-    {
-        //衝突オブジェクトのタグを取得
-        ObjectTag tag = other->GetTag();
-        //プレイヤーと衝突した場合
-        if (tag == ObjectTag::Bucket)
-        {
-        }
     }
 
     /// <summary>

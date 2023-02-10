@@ -32,12 +32,6 @@ namespace Calculation
         /// </summary>
         void Draw()override;
 
-        /// <summary>
-        /// 当たり判定処理
-        /// </summary>
-        /// <param name="other">当たっているオブジェクトのポインタ</param>
-        void OnCollisionEnter(GameObjectBase* other)override;
-
     private:
         /// <summary>
         /// モデルの読み込み
@@ -57,7 +51,7 @@ namespace Calculation
         //当たり判定球の中心座標
         const VECTOR FirstLocalPos = { 0,0,0 };
         //当たり判定球の半径
-        const float Radius = 20.0f;
+        const float Radius = 30.0f;
         
         //落下の下限値
         const float LowerLimitPosY = 250.0f;

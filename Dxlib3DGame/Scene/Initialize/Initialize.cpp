@@ -41,6 +41,10 @@ void Initialize::DestroyInstance()
 
 SceneBase* Initialize::Update()
 {
+    //マネージャに登録されているオブジェクトデータを削除
+    Calculation::GameObjectManager::ReleaseAllObj();
+
+    //オブジェクトデータをマネージャに登録
     Calculation::GameObjectManager::Entry(new Calculation::Background);
     Calculation::GameObjectManager::Entry(new Calculation::Player);
     for (int i = 0; i < 3; i++)
@@ -52,7 +56,9 @@ SceneBase* Initialize::Update()
     Calculation::GameObjectManager::Entry(new Calculation::Helper);
     Calculation::GameObjectManager::Entry(new Calculation::Customer);
 
+    //登録されたオブジェクトデータを初期化
     Calculation::GameObjectManager::Init();
+    //ルールクラスの初期化
     rule->Initialize();
     return SceneManager::NextScene(this);
 }
